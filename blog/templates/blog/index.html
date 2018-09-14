@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>我的博客</title>
+     <style type=".../css/index.css" >
+         *{font-size: 30px;}
+
+     </style>
 </head>
 <body>
-<h1>
-    <a href="{% url 'blog:edit_page' 0 %}">新文章</a>
-</h1>
-
+<div class="top_title">
+    <button type="button" >
+        <a href="{% url 'blog:edit_page' 0 %}">新文章</a>
+    </button>
+</div>
 {% for article in articles %}
     <a href="{% url 'blog:article_page' article.id %}">{{ article.title }}</a>
     <br/>
